@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escape Room</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="escape-room-instructions" class="escape-room">
+        <h1>Escape Room</h1>
+        <p>Di dalam ruangan ini menyimpan petunjuk yang penting untuk menyelesaikan teka-teki agar bisa keluar dari ruangan ini dengan cara yang telah ditentukan. <br> Tugas tim anda adalah memecahkan petunjuk yang ada di dalam ruangan dan meloloskan diri dari ruangan sesuai dengan cara yang diarahkan oleh petunjuk di dalam ruangan.</p>
+        <p>Penjaga Escape Room akan memberikan <span style="font-weight: bold;">2 buah gem</span> dan <span style="font-weight: bold;">kunci</span> yang berisikan clue menuju ke pos selanjutnya apabila tim anda berhasil meloloskan diri dari ruangan. Tim anda hanya memiliki waktu <span style="font-weight: bold;">maksimal 15 menit.</span></p>
+        <p>Jika tim anda tidak dapat keluar dari batas waktu yang telah ditentukan, maka tim akan tetap mendapatkan kunci yang berisikan clue namun akan ada <span style="font-weight: bold;">pengurangan poin sebesar 100 points.</span></p>
+        <p>Masukkan kunci anda di dalam kolom berikut.</p>
+        <form id="answerForm-escape-room-instructions">
+            <input type="text" id="answerInput-escape-room-instructions" placeholder="Masukkan kunci anda di sini" required>
+            <br>
+            <button type="submit">Kirim Kunci</button>
+        </form>
+        <div id="escape-room-success">
+            <p>Kunci Benar! <br> Anda telah berhasil keluar dari ruangan. <br> Silahkan tekan tombol "Next" untuk melihat clue menuju pos berikutnya.</p>
+            <button onclick="window.location.href='ground-zero.html'">Next</button>
+        </div>
+        <div id="escape-room-failure">
+            <p>Kunci Salah, coba lagi.</p>
+        </div>
+    </div>
+
+    
+<script>
+    document.getElementById('answerForm-escape-room-instructions').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const userAnswer = document.getElementById('answerInput-escape-room-instructions').value.trim().toUpperCase();
+
+        fetch('escape-room-key.txt')
+            .then(response => response.text())
+            .then(data => {
+                const answers = data.split('\n').map(a => a.trim().toUpperCase());
+                if (answers.includes(userAnswer)) {
+                    document.getElementById('escape-room-success').style.display = 'flex';
+                    document.getElementById('escape-room-failure').style.display = 'none';
+                } else {
+                    document.getElementById('escape-room-success').style.display = 'none';
+                    document.getElementById('escape-room-failure').style.display = 'flex';
+                }
+            })
+            .catch(error => console.error('Error fetching the answer:', error));
+    });
+</script>
+</body>
+</html>
