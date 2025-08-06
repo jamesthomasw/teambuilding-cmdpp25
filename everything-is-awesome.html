@@ -8,16 +8,13 @@
 </head>
 <body>
     <div id="everything-is-awesome-instructions" class="everything-is-awesome">
-        <h1>Tujuan anda selanjutnya</h1>
-        <h2>Petunjuk: <br>(Seluruh Pos berada di DALAM AREA UNIPLAZA & TENGAH)</h2>
+        <h1>Next Pos Game</h1>
+        <h2>Clue:</h2>
         <img src="West Tower_Lobby.jpg" style="max-width: 80%;" alt="west_tower_lobby">
         <img src="Meeting Room.jpg" style="max-width: 80%;" alt="meeting_room">
         <p>Dua Wilayah Operasional RGE yang paling besar</p>
+        <p style="font-size: 0.8em;">Note: Semua Pos Game berada di DALAM AREA UNIPLAZA & TENGAH</p>
         <button id="everything-is-awesome-start">Saya Sudah Sampai</button>
-        </div>
-        <div id="everything-is-awesome-wrong-answer" style="display: none;">
-            <p>Jawaban salah, coba lagi.</p>
-        </div>
     </div>
     <div id="everything-is-awesome-mission" class="everything-is-awesome" style="display: none;">
         <h1>Everything Is Awesome</h1>
@@ -28,32 +25,14 @@
             <br>
             <button type="submit">Kirim Kunci</button>
         </form>
-        <div id="everything-is-awesome-correct-answer" style="display: none;">
+        <div id="everything-is-awesome-mission-correct-answer" style="display: none;">
             <p>Kunci benar! <br> Anda telah menyelesaikan misi di Pos 4 (PURPLE) - EVERYTHING IS AWESOME.</p>
-            <p>Penjaga pos akan memberikan gem dan kunci berisikan clue menuju ke pos selanjutnya. Masukkan kunci dan tekan tombol "Next" untuk melihat clue menuju pos selanjutnya.</p>
+            <p>Penjaga pos akan memberikan gem dan kunci berisikan clue menuju ke pos selanjutnya. Tekan tombol "Next" untuk melihat clue menuju pos selanjutnya.</p>
             <button id="everything-is-awesome-end" onclick="window.location.href=''">Next</button>
         </div>
         <p id="everything-is-awesome-mission-wrong-answer" style="display: none;">Kunci salah, coba lagi.</p>
     </div>
     <script>
-        document.getElementById('answerForm-everything-is-awesome-instructions').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const userAnswer = document.getElementById('answerInput-everything-is-awesome-instructions').value.trim().toUpperCase();
-
-            fetch('everything-is-awesome-answer.txt')
-                .then(response => response.text())
-                .then(data => {
-                    const answers = data.split('\n').map(a => a.trim().toUpperCase());
-                    if (answers.includes(userAnswer)) {
-                        document.getElementById('mapContainerEverythingIsAwesome').style.display = 'block';
-                        document.getElementById('everything-is-awesome-wrong-answer').style.display = 'none';
-                    } else {
-                        document.getElementById('mapContainerEverythingIsAwesome').style.display = 'none';
-                        document.getElementById('everything-is-awesome-wrong-answer').style.display = 'block';
-                    }
-                });
-        });
-        
         document.getElementById('everything-is-awesome-start').addEventListener('click', function() {
             document.getElementById('everything-is-awesome-instructions').style.display = 'none';
             document.getElementById('everything-is-awesome-mission').style.display = 'flex';
