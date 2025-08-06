@@ -10,17 +10,17 @@
     <div id="obelix-totem-instructions" class="obelix-totem">
         <h1>Next Pos Game</h1>
         <h2>Clue: </h2>
-        <p>Good for<span style="font-weight: bold;"> Community</span>, _ _ _ _ _ _ _, <span style="font-weight: bold;">Climate, Customer</span> and <span style="font-weight: bold;">Company</span></p>
+        <p>Good for<span style="font-weight: bold;"> Community</span>, _ _ _ _ _ _ _ , <span style="font-weight: bold;">Climate, Customer</span> and <span style="font-weight: bold;">Company</span></p>
         <form id="answerForm-obelix-totem-instructions">
             <input type="text" id="answerInput-obelix-totem-instructions" placeholder="Masukkan jawaban anda di sini" required>
             <br>
-            <button type="submit">Kirim Jawaban</button>
+            <button id="submit-answer-button" type="submit">Kirim Jawaban</button>
         </form>
         <div id="mapContainerObelixTotem" style="display: none;">
             <p>Jawaban Benar!</p>
             <img src="West Tower_Lobby.jpg" alt="west_tower_lobby" style="max-width: 80%;">
             <img src="Country Room.jpg" alt="country_room" style="max-width: 80%;">
-            <p>Tempat dimana anda diminta untuk recall materi MTP 1 & MTP 2 pada saat Day 0.</p>
+            <p>Tempat dimana anda diminta untuk mengingat kembali materi MTP 1 & MTP 2 pada saat Day 0.</p>
             <p style="font-size: 0.8em;">Note: Semua Pos Game berada di DALAM AREA UNIPLAZA & TENGAH</p>
             <button id="obelix-totem-start">Saya Sudah Sampai</button>
         </div>
@@ -56,6 +56,7 @@
                     const answers = data.split('\n').map(a => a.trim().toUpperCase());
                     if (answers.includes(userAnswer)) {
                         document.getElementById('mapContainerObelixTotem').style.display = 'flex';
+                        document.getElementById('submit-answer-button').style.background = 'grey';
                         document.getElementById('obelix-totem-wrong-answer').style.display = 'none';
                     } else {
                         document.getElementById('mapContainerObelixTotem').style.display = 'none';

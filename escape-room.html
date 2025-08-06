@@ -9,14 +9,14 @@
 <body>
     <div id="escape-room-instructions" class="escape-room">
         <h1>Escape Room</h1>
-        <p>Di dalam ruangan ini menyimpan petunjuk yang penting untuk menyelesaikan teka-teki agar bisa keluar dari ruangan ini dengan cara yang telah ditentukan. <br> Tugas tim anda adalah memecahkan petunjuk yang ada di dalam ruangan dan meloloskan diri dari ruangan sesuai dengan cara yang diarahkan oleh petunjuk di dalam ruangan.</p>
-        <p>Penjaga Escape Room akan memberikan <span style="font-weight: bold;">2 buah gem</span> dan <span style="font-weight: bold;">kunci</span> yang berisikan clue menuju ke pos selanjutnya apabila tim anda berhasil meloloskan diri dari ruangan. Tim anda hanya memiliki waktu <span style="font-weight: bold;">maksimal 15 menit.</span></p>
-        <p>Jika tim anda tidak dapat keluar dari batas waktu yang telah ditentukan, maka tim akan tetap mendapatkan kunci yang berisikan clue namun akan ada <span style="font-weight: bold;">pengurangan poin sebesar 100 points.</span></p>
-        <p>Masukkan kunci anda di dalam kolom berikut.</p>
+        <p>Tugas tim anda adalah <span style="font-weight: bold;">memecahkan petunjuk</span>  yang ada di dalam ruangan dan <span style="font-weight: bold;">meloloskan diri</span> dari ruangan <span style="font-weight: bold;">sesuai dengan cara yang diarahkan oleh petunjuk</span> di dalam ruangan dalam batas waktu <span style="font-weight: bold;">maksimal 15 menit.</span></p>
+        <p>Penjaga Escape Room akan memberikan gem dan kunci yang berisikan clue menuju ke pos selanjutnya bagi kelompok yang berhasil meloloskan diri dari ruangan. </p>
+        <p>Jika tim anda tidak dapat keluar dari batas waktu yang telah ditentukan, maka tim anda akan menerima konsekuensi yaitu <span style="font-weight: bold;">pengurangan poin sebesar 100 points.</span></p>
+        <p>Masukkan kunci anda di dalam kolom jawaban berikut.</p>
         <form id="answerForm-escape-room-instructions">
             <input type="text" id="answerInput-escape-room-instructions" placeholder="Masukkan kunci anda di sini" required>
             <br>
-            <button type="submit">Kirim Kunci</button>
+            <button id="submit-key-button" type="submit">Kirim Kunci</button>
         </form>
         <div id="escape-room-success">
             <p>Kunci Benar! <br> Anda telah berhasil keluar dari ruangan. <br> Silahkan tekan tombol "Next" untuk melihat clue menuju pos berikutnya.</p>
@@ -39,6 +39,7 @@
                 const answers = data.split('\n').map(a => a.trim().toUpperCase());
                 if (answers.includes(userAnswer)) {
                     document.getElementById('escape-room-success').style.display = 'flex';
+                    document.getElementById('submit-key-button').style.background = 'grey';
                     document.getElementById('escape-room-failure').style.display = 'none';
                 } else {
                     document.getElementById('escape-room-success').style.display = 'none';

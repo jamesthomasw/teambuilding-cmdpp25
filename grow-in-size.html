@@ -15,7 +15,7 @@
         <form id="answerForm-grow-in-size-instructions">
             <input type="text" id="answerInput-grow-in-size-instructions" placeholder="Masukkan jawaban anda di sini" required>
             <br>
-            <button type="submit">Kirim Jawaban</button>
+            <button id="submit-answer-button" type="submit">Kirim Jawaban</button>
         </form>
         <div id="mapContainerGrowInSize" style="display: none;">
             <p>Jawaban Benar!</p>
@@ -28,17 +28,17 @@
     </div>
     <div id="grow-in-size-mission" class="grow-in-size" style="display: none;">
         <h1>Selesaikan Misi Anda </h1>
-        <p>Anda sudah sampai di Pos Grow In Size.</p>
+        <p>Anda sudah sampai di Pos Game <br>Grow In Size.</p>
         <p>Misi tim anda adalah temui penjaga pos Grow In Size dan selesaikan tantangan yang diberikan.</p>
-        <p>Penjaga pos akan memberikan 2 buah gem dan sebuah kunci berisikan clue menuju ke pos selanjutnya kepada kelompok yang berhasil menyelesaikan tantangan.</p>
+        <p>Penjaga pos akan memberikan gem dan sebuah kunci berisikan clue menuju ke pos selanjutnya kepada kelompok yang berhasil menyelesaikan tantangan.</p>
         <form id="answerForm-grow-in-size-mission">
             <input type="text" id="answerInput-grow-in-size-mission" placeholder="Masukkan kunci anda di sini" required>
             <br>
-            <button type="submit">Kirim Kunci</button>
+            <button id="submit-key-button" type="submit">Kirim Kunci</button>
             <br>
         </form>
         <div id="grow-in-size-correct-answer" style="display: none;">
-            <p>Kunci benar! <br> Anda telah menyelesaikan misi di Grow In Size.</p>
+            <p>Kunci benar! <br> Anda telah menyelesaikan misi di Pos Game Grow In Size.</p>
             <p>Anda mendapatkan 2 buah gem dan sebuah clue menuju ke pos selanjutnya. Tekan tombol "Next" untuk melihat clue menuju pos selanjutnya.</p>
             <button id="grow-in-size-end" onclick="window.location.href='worst-case-scenario.html'">Next</button>
         </div>
@@ -55,6 +55,7 @@
                     const answers = data.split('\n').map(a => a.trim().toUpperCase());
                     if (answers.includes(userAnswer)) {
                         document.getElementById('mapContainerGrowInSize').style.display = 'block';
+                        document.getElementById('submit-answer-button').style.background = 'grey';
                         document.getElementById('grow-in-size-wrong-answer').style.display = 'none';
                     } else {
                         document.getElementById('mapContainerGrowInSize').style.display = 'none';
@@ -79,6 +80,7 @@
                     const answers = data.split('\n').map(a => a.trim().toUpperCase());
                     if (answers.includes(userAnswer)) {
                         document.getElementById('grow-in-size-correct-answer').style.display = 'flex';
+                        document.getElementById('submit-key-button').style.background = 'grey';
                         document.getElementById('grow-in-size-wrong-answer').style.display = 'none';
                     } else {
                         document.getElementById('grow-in-size-correct-answer').style.display = 'none';
