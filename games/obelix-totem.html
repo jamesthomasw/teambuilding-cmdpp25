@@ -18,8 +18,8 @@
         </form>
         <div id="mapContainerObelixTotem" style="display: none;">
             <p>Jawaban Benar!</p>
-            <img src="West Tower_Lobby.jpg" alt="west_tower_lobby" style="max-width: 80%;">
-            <img src="Country Room.jpg" alt="country_room" style="max-width: 80%;">
+            <img src="assets/West Tower_Lobby.jpg" alt="west_tower_lobby" style="max-width: 80%;">
+            <img src="assets/Country Room.jpg" alt="country_room" style="max-width: 80%;">
             <p>Tempat dimana anda diminta untuk mengingat kembali materi MTP 1 & MTP 2 pada saat Day 0.</p>
             <p style="font-size: 0.8em;">Note: Semua Pos Game berada di DALAM AREA UNIPLAZA & TENGAH</p>
             <button id="obelix-totem-start">Saya Sudah Sampai</button>
@@ -50,7 +50,7 @@
             e.preventDefault();
             const userAnswer = document.getElementById('answerInput-obelix-totem-instructions').value.trim().toUpperCase();
 
-            fetch('obelix-totem-answer.txt')
+            fetch('answer/obelix-totem-answer.txt')
                 .then(response => response.text())
                 .then(data => {
                     const answers = data.split('\n').map(a => a.trim().toUpperCase());
@@ -74,7 +74,7 @@
             e.preventDefault();
             const userKey = document.getElementById('answerInput-obelix-totem-mission').value.trim().toUpperCase();
 
-            fetch('obelix-totem-key.txt')
+            fetch('key/obelix-totem-key.txt')
                 .then(response => response.text())
                 .then(data => {
                     const answers = data.split('\n').map(a => a.trim().toUpperCase());

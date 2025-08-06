@@ -49,7 +49,7 @@
             e.preventDefault();
             const userAnswer = document.getElementById('answerInput-grow-in-size-instructions').value.trim().toUpperCase();
 
-            fetch('grow-in-size-answer.txt')
+            fetch('answer/grow-in-size-answer.txt')
                 .then(response => response.text())
                 .then(data => {
                     const answers = data.split('\n').map(a => a.trim().toUpperCase());
@@ -74,7 +74,7 @@
             e.preventDefault();
             const userAnswer = document.getElementById('answerInput-grow-in-size-mission').value.trim().toUpperCase();
 
-            fetch('grow-in-size-key.txt')
+            fetch('key/grow-in-size-key.txt')
                 .then(response => response.text())
                 .then(data => {
                     const answers = data.split('\n').map(a => a.trim().toUpperCase());

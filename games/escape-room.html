@@ -33,7 +33,7 @@
         e.preventDefault();
         const userAnswer = document.getElementById('answerInput-escape-room-instructions').value.trim().toUpperCase();
 
-        fetch('escape-room-key.txt')
+        fetch('key/escape-room-key.txt')
             .then(response => response.text())
             .then(data => {
                 const answers = data.split('\n').map(a => a.trim().toUpperCase());

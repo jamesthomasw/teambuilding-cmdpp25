@@ -48,7 +48,7 @@ document.getElementById('answerForm-ground-zero-instructions').addEventListener(
     e.preventDefault();
     const userAnswer = document.getElementById('answerInput-ground-zero-instructions').value.trim().toUpperCase();
 
-    fetch('ground-zero-answer.txt')
+    fetch('answer/ground-zero-answer.txt')
         .then(response => response.text())
         .then(data => {
             const answers = data.split('\n').map(a => a.trim().toUpperCase());
@@ -75,7 +75,7 @@ document.getElementById('answerForm-ground-zero-mission').addEventListener('subm
     e.preventDefault();
     const userKey = document.getElementById('answerInput-ground-zero-mission').value.trim().toUpperCase();
 
-    fetch('ground-zero-key.txt')
+    fetch('key/ground-zero-key.txt')
         .then(response => response.text())
         .then(data => {
             const keys = data.split('\n').map(k => k.trim().toUpperCase());

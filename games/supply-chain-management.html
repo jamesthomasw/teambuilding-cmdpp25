@@ -43,7 +43,7 @@
             e.preventDefault();
             const userAnswer = document.getElementById('answerInput-supply-chain-management-mission').value.trim().toUpperCase();
 
-            fetch('supply-chain-management-key.txt')
+            fetch('key/supply-chain-management-key.txt')
                 .then(response => response.text())
                 .then(data => {
                     const answers = data.split('\n').map(a => a.trim().toUpperCase());

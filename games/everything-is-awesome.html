@@ -10,8 +10,8 @@
     <div id="everything-is-awesome-instructions" class="everything-is-awesome">
         <h1>Next Pos Game</h1>
         <h2>Clue:</h2>
-        <img src="West Tower_Lobby.jpg" style="max-width: 80%;" alt="west_tower_lobby">
-        <img src="Meeting Room.jpg" style="max-width: 80%;" alt="meeting_room">
+        <img src="assets/West Tower_Lobby.jpg" style="max-width: 80%;" alt="west_tower_lobby">
+        <img src="assets/Meeting Room.jpg" style="max-width: 80%;" alt="meeting_room">
         <p>Dua Wilayah Operasional RGE yang paling besar</p>
         <p style="font-size: 0.8em;">Note: Semua Pos Game berada di DALAM AREA UNIPLAZA & TENGAH</p>
         <button id="everything-is-awesome-start">Saya Sudah Sampai</button>
@@ -42,7 +42,7 @@
             e.preventDefault();
             const userKey = document.getElementById('answerInput-everything-is-awesome-mission').value.trim().toUpperCase();
 
-            fetch('everything-is-awesome-key.txt')
+            fetch('key/everything-is-awesome-key.txt')
                 .then(response => response.text())
                 .then(data => {
                     const answers = data.split('\n').map(a => a.trim().toUpperCase());

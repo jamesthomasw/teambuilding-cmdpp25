@@ -10,7 +10,7 @@
     <div id="worst-case-scenario-instructions" class="worst-case-scenario">
         <h1>Next Pos Game</h1>
         <h2>Clue:</h2>
-        <img src="Heritage_2.jpg" style="max-width: 80%;">
+        <img src="assets/Heritage_1.jpg" style="max-width: 80%;">
         <p style="font-size: 0.8em;">Note: Semua Pos Game berada di DALAM AREA UNIPLAZA & TENGAH</p>
         <button id="worst-case-scenario-start">Saya Sudah Sampai</button>
     </div>
@@ -41,7 +41,7 @@
             e.preventDefault();
             const userAnswer = document.getElementById('answerInput-worst-case-scenario-mission').value.trim().toUpperCase();
 
-            fetch('worst-case-scenario-key.txt')
+            fetch('key/worst-case-scenario-key.txt')
                 .then(response => response.text())
                 .then(data => {
                     const answers = data.split('\n').map(a => a.trim().toUpperCase());

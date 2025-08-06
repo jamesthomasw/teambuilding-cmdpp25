@@ -42,7 +42,7 @@
             e.preventDefault();
             const userAnswer = document.getElementById('answerInput-harmony-in-diversity-mission').value.trim().toUpperCase();
 
-            fetch('harmony-in-diversity-key.txt')
+            fetch('key/harmony-in-diversity-key.txt')
                 .then(response => response.text())
                 .then(data => {
                     const answers = data.split('\n').map(a => a.trim().toUpperCase());
