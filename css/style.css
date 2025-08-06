@@ -99,14 +99,15 @@ body, html {
 }
 
 #mapContainerGroundZero,
-#mapContainerGrowInSize {
+#mapContainerGrowInSize,
+#mapContainerWorstCaseScenario {
     display: none;
     width: 100%;
     height: 400px;
     margin-top: 20px;
 }
 
-#ground-zero-start, #grow-in-size-start {
+#ground-zero-start, #grow-in-size-start, #worst-case-scenario-start {
     display: block;
     margin: 20px auto 0 auto; /* Top margin and auto horizontal centering */
     padding: 12px 28px;
@@ -120,7 +121,7 @@ body, html {
     text-align: center;
 }
 
-#ground-zero-end, #grow-in-size-end {
+#ground-zero-end, #grow-in-size-end, #worst-case-scenario-end {
     display: block;
     margin: 20px auto 0 auto; /* Top margin and auto horizontal centering */
     padding: 12px 28px;
@@ -379,7 +380,323 @@ body, html {
 .worst-case-scenario h1, .worst-case-scenario h2, .worst-case-scenario p {
     max-width: 80%;
     font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.5em;
     color: #333;
     text-align: center;
     margin: 10px 0;
+}
+
+#answerInput-worst-case-scenario-instructions {
+    display: block;
+    margin-top: 10px;
+    width: 100%;
+    padding: 14px 18px;
+    font-size: 1em;
+    border: 2px solid #007bff;
+    border-radius: 6px;
+    box-sizing: border-box;
+}
+
+#answerForm-worst-case-scenario-instructions button[type="submit"] {
+    padding: 12px 28px;
+    font-size: 1em;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#answerForm-worst-case-scenario-mission button[type="submit"] {
+    padding: 12px 28px;
+    font-size: 1em;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#answerInput-worst-case-scenario-mission {
+    display: block;
+    margin-top: 10px;
+    width: 100%;
+    padding: 14px 18px;
+    font-size: 1em;
+    border: 2px solid #007bff;
+    border-radius: 6px;
+    box-sizing: border-box;
+}
+
+#answerForm-worst-case-scenario-mission button[type="submit"] {
+    padding: 12px 28px;
+    font-size: 1em;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#worst-case-scenario-mission-correct-answer, 
+#worst-case-scenario-mission-wrong-answer {
+    display: flex;
+    width: 100%;
+    max-width: 600px;
+    margin: 24px auto 0 auto;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.cross-the-swamp {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    max-width: 100%;
+    margin: 0 auto;           /* Center horizontally */
+    text-align: center;       /* Center text inside */
+    background-color: #f8f9fa; /* Light background for contrast */
+    padding: 40px 0;
+}
+
+.cross-the-swamp h1, .cross-the-swamp h2, .cross-the-swamp p {
+    max-width: 80%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.5em;
+    color: #333;
+    text-align: center;
+    margin: 10px 0;
+}
+
+#answerInput-cross-the-swamp-instructions {
+    display: block;
+    margin-top: 10px;
+    width: 100%;
+    padding: 14px 18px;
+    font-size: 1em;
+    border: 2px solid #007bff;
+    border-radius: 6px;
+    box-sizing: border-box;
+}
+
+#answerForm-cross-the-swamp-instructions button[type="submit"] {
+    padding: 12px 28px;
+    font-size: 1em;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#answerForm-cross-the-swamp-mission button[type="submit"] {
+    padding: 12px 28px;
+    font-size: 1em;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#answerInput-cross-the-swamp-mission {
+    display: block;
+    margin-top: 10px;
+    width: 100%;
+    padding: 14px 18px;
+    font-size: 1em;
+    border: 2px solid #007bff;
+    border-radius: 6px;
+    box-sizing: border-box;
+}
+
+#answerForm-cross-the-swamp-mission button[type="submit"] {
+    padding: 12px 28px;
+    font-size: 1em;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#cross-the-swamp-mission-correct-answer, 
+#cross-the-swamp-mission-wrong-answer {
+    display: flex;
+    width: 100%;
+    max-width: 600px;
+    margin: 24px auto 0 auto;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#mapContainerCrossTheSwamp {
+    display: none;
+    width: 100%;
+    height: 400px;
+    margin-top: 20px;
+}
+
+#cross-the-swamp-start {
+    display: block;
+    margin: 20px auto 0 auto; /* Top margin and auto horizontal centering */
+    padding: 12px 28px;
+    font-size: 1em;
+    color: #fff;
+    background-color: #28a745;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    text-align: center;
+}
+
+#cross-the-swamp-end {
+    display: block;
+    margin: 20px auto 0 auto; /* Top margin and auto horizontal centering */
+    padding: 12px 28px;
+    font-size: 1em;
+    color: #fff;
+    background-color: #28a745;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    text-align: center;
+}
+
+.obelix-totem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    max-width: 100%;
+    margin: 0 auto;           /* Center horizontally */
+    text-align: center;       /* Center text inside */
+    background-color: #f8f9fa; /* Light background for contrast */
+    padding: 40px 0;
+}
+
+.obelix-totem h1, .obelix-totem h2, .obelix-totem p {
+    max-width: 80%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.5em;
+    color: #333;
+    text-align: center;
+    margin: 10px 0;
+}
+
+#answerInput-obelix-totem-instructions {
+    display: block;
+    margin-top: 10px;
+    width: 100%;
+    padding: 14px 18px;
+    font-size: 1em;
+    border: 2px solid #007bff;
+    border-radius: 6px;
+    box-sizing: border-box;
+}
+
+#answerForm-obelix-totem-instructions button[type="submit"] {
+    padding: 12px 28px;
+    font-size: 1em;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#answerForm-obelix-totem-mission button[type="submit"] {
+    padding: 12px 28px;
+    font-size: 1em;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#answerInput-obelix-totem-mission {
+    display: block;
+    margin-top: 10px;
+    width: 100%;
+    padding: 14px 18px;
+    font-size: 1em;
+    border: 2px solid #007bff;
+    border-radius: 6px;
+    box-sizing: border-box;
+}
+
+#answerForm-obelix-totem-mission button[type="submit"] {
+    padding: 12px 28px;
+    font-size: 1em;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#obelix-totem-mission-correct-answer, 
+#obelix-totem-mission-wrong-answer {
+    display: flex;
+    width: 100%;
+    max-width: 600px;
+    margin: 24px auto 0 auto;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#mapContainerObelixTotem {
+    display: none;
+    width: 100%;
+    height: 400px;
+    margin-top: 20px;
+}
+
+#obelix-totem-start {
+    display: block;
+    margin: 20px auto 0 auto; /* Top margin and auto horizontal centering */
+    padding: 12px 28px;
+    font-size: 1em;
+    color: #fff;
+    background-color: #28a745;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    text-align: center;
+}
+
+#obelix-totem-end {
+    display: block;
+    margin: 20px auto 0 auto; /* Top margin and auto horizontal centering */
+    padding: 12px 28px;
+    font-size: 1em;
+    color: #fff;
+    background-color: #28a745;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    text-align: center;
 }
