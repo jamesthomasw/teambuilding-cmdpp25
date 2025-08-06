@@ -99,8 +99,7 @@ body, html {
 }
 
 #mapContainerGroundZero,
-#mapContainerGrowInSize,
-#mapContainerWorstCaseScenario {
+#mapContainerGrowInSize {
     display: none;
     width: 100%;
     height: 400px;
@@ -377,7 +376,7 @@ body, html {
     padding: 40px 0;
 }
 
-.worst-case-scenario h1, .worst-case-scenario h2, .worst-case-scenario p {
+.worst-case-scenario h1, .worst-case-scenario h2 {
     max-width: 80%;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 1.5em;
@@ -386,26 +385,13 @@ body, html {
     margin: 10px 0;
 }
 
-#answerInput-worst-case-scenario-instructions {
-    display: block;
-    margin-top: 10px;
-    width: 100%;
-    padding: 14px 18px;
-    font-size: 1em;
-    border: 2px solid #007bff;
-    border-radius: 6px;
-    box-sizing: border-box;
-}
-
-#answerForm-worst-case-scenario-instructions button[type="submit"] {
-    padding: 12px 28px;
-    font-size: 1em;
-    color: #fff;
-    background-color: #007bff;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    font-weight: bold;
+.worst-case-scenario p {
+    max-width: 80%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.3em;
+    color: #333;
+    text-align: center;
+    margin: 10px 0;
 }
 
 #answerForm-worst-case-scenario-mission button[type="submit"] {
@@ -466,7 +452,7 @@ body, html {
     padding: 40px 0;
 }
 
-.cross-the-swamp h1, .cross-the-swamp h2, .cross-the-swamp p {
+.cross-the-swamp h1, .cross-the-swamp h2 {
     max-width: 80%;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 1.5em;
@@ -475,26 +461,13 @@ body, html {
     margin: 10px 0;
 }
 
-#answerInput-cross-the-swamp-instructions {
-    display: block;
-    margin-top: 10px;
-    width: 100%;
-    padding: 14px 18px;
-    font-size: 1em;
-    border: 2px solid #007bff;
-    border-radius: 6px;
-    box-sizing: border-box;
-}
-
-#answerForm-cross-the-swamp-instructions button[type="submit"] {
-    padding: 12px 28px;
-    font-size: 1em;
-    color: #fff;
-    background-color: #007bff;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    font-weight: bold;
+.cross-the-swamp p {
+    max-width: 80%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.3em;
+    color: #333;
+    text-align: center;
+    margin: 10px 0;
 }
 
 #answerForm-cross-the-swamp-mission button[type="submit"] {
@@ -542,13 +515,6 @@ body, html {
     flex-direction: column;
 }
 
-#mapContainerCrossTheSwamp {
-    display: none;
-    width: 100%;
-    height: 400px;
-    margin-top: 20px;
-}
-
 #cross-the-swamp-start {
     display: block;
     margin: 20px auto 0 auto; /* Top margin and auto horizontal centering */
@@ -590,10 +556,19 @@ body, html {
     padding: 40px 0;
 }
 
-.obelix-totem h1, .obelix-totem h2, .obelix-totem p {
+.obelix-totem h1, .obelix-totem h2 {
     max-width: 80%;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 1.5em;
+    color: #333;
+    text-align: center;
+    margin: 10px 0;
+}
+
+.obelix-totem p {
+    max-width: 80%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.3em;
     color: #333;
     text-align: center;
     margin: 10px 0;
@@ -667,9 +642,13 @@ body, html {
 }
 
 #mapContainerObelixTotem {
-    display: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
     width: 100%;
-    height: 400px;
+    min-height: 400px;
     margin-top: 20px;
 }
 
@@ -688,6 +667,139 @@ body, html {
 }
 
 #obelix-totem-end {
+    display: block;
+    margin: 20px auto 0 auto; /* Top margin and auto horizontal centering */
+    padding: 12px 28px;
+    font-size: 1em;
+    color: #fff;
+    background-color: #28a745;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    text-align: center;
+}
+
+.everything-is-awesome {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    max-width: 100%;
+    margin: 0 auto;           /* Center horizontally */
+    text-align: center;       /* Center text inside */
+    background-color: #f8f9fa; /* Light background for contrast */
+    padding: 40px 0;
+}
+
+.everything-is-awesome h1, .everything-is-awesome h2 {
+    max-width: 80%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.5em;
+    color: #333;
+    text-align: center;
+    margin: 10px 0;
+}
+
+.everything-is-awesome p {
+    max-width: 80%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.3em;
+    color: #333;
+    text-align: center;
+    margin: 10px 0;
+}
+
+#answerInput-everything-is-awesome-instructions {
+    display: block;
+    margin-top: 10px;
+    width: 100%;
+    padding: 14px 18px;
+    font-size: 1em;
+    border: 2px solid #007bff;
+    border-radius: 6px;
+    box-sizing: border-box;
+}
+
+#answerForm-everything-is-awesome-instructions button[type="submit"] {
+    padding: 12px 28px;
+    font-size: 1em;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#answerForm-everything-is-awesome-mission button[type="submit"] {
+    padding: 12px 28px;
+    font-size: 1em;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#answerInput-everything-is-awesome-mission {
+    display: block;
+    margin-top: 10px;
+    width: 100%;
+    padding: 14px 18px;
+    font-size: 1em;
+    border: 2px solid #007bff;
+    border-radius: 6px;
+    box-sizing: border-box;
+}
+
+#answerForm-everything-is-awesome-mission button[type="submit"] {
+    padding: 12px 28px;
+    font-size: 1em;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#everything-is-awesome-mission-correct-answer, 
+#everything-is-awesome-mission-wrong-answer {
+    display: flex;
+    width: 100%;
+    max-width: 600px;
+    margin: 24px auto 0 auto;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#mapContainerEverythingIsAwesome {
+    display: none;
+    width: 100%;
+    height: 400px;
+    margin-top: 20px;
+}
+
+#everything-is-awesome-start {
+    display: block;
+    margin: 20px auto 0 auto; /* Top margin and auto horizontal centering */
+    padding: 12px 28px;
+    font-size: 1em;
+    color: #fff;
+    background-color: #28a745;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    text-align: center;
+}
+
+#everything-is-awesome-end {
     display: block;
     margin: 20px auto 0 auto; /* Top margin and auto horizontal centering */
     padding: 12px 28px;

@@ -18,7 +18,9 @@
         </form>
         <div id="mapContainerObelixTotem" style="display: none;">
             <p>Jawaban Benar!</p>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d497.7507753961587!2d98.68231889830192!3d3.5860499354808835!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x303131b61b8d5887%3A0x1c2a4a4e4b0d64b8!2sUniland!5e0!3m2!1sen!2sid!4v1754444568418!5m2!1sen!2sid" width="350" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <img src="West Tower_Lobby.jpg" alt="west_tower_lobby" style="max-width: 80%;">
+            <img src="Country Room.jpg" alt="country_room" style="max-width: 80%;">
+            <p>Tempat dimana anda diminta untuk recall materi MTP 1 & MTP 2 pada saat Day 0.</p>
             <button id="obelix-totem-start">Saya Sudah Sampai</button>
         </div>
         <div id="obelix-totem-wrong-answer" style="display: none;">
@@ -27,18 +29,18 @@
     </div>
     <div id="obelix-totem-mission" class="obelix-totem" style="display: none;">
         <h1>Obelix's Totem</h1>
-        <p>Tim anda mendapatkan misi untuk memindahkan 3 bola tenis dan 2 bola plastik dari titik START menuju titik FINISH menggunakan pipa bertali dalam batas waktu 15 menit.</p>
-        <p>Setiap anggota tim anda hanya boleh memegang ujung tali.</p>
-        <p>Untuk setiap bola tenis yang berhasil dipindahkan, tim anda akan mendapatkan 1 gem. Untuk 2 buah bola plastik yang berhasil dipindahkan, tim anda akan mendapatkan 1 gem.</p>
+        <p>Temui penjaga pos Obelix's Totem.</p>
+        <p>Tim anda harus menyelesaikan tantangan yang diberikan dalam batas waktu yang telah ditentukan.</p>
+        <p>Penjaga pos akan memberikan gem dan kunci berisikan clue menuju ke pos selanjutnya bagi kelompok yang berhasil menyelesaikan tantangan.</p>
         <form id="answerForm-obelix-totem-mission">
             <input type="text" id="answerInput-obelix-totem-mission" placeholder="Masukkan kunci anda di sini" required>
             <br>
-            <button type="submit">Kirim Kunci</button>
+            <button id="submit-key-button" type="submit">Kirim Kunci</button>
         </form>
         <div id="obelix-totem-mission-correct-answer" style="display: none;">
             <p>Kunci benar! <br> Anda telah menyelesaikan misi di Pos 3 (BLUE) - OBELIX'S TOTEM.</p>
-            <p>Penjaga pos akan memberikan gem dan kunci berisikan clue menuju ke pos selanjutnya. Masukkan kunci dan tekan tombol "Next" untuk melihat clue menuju pos selanjutnya.</p>
-            <button id="obelix-totem-end" onclick="window.location.href=''">Next</button>
+            <p>Penjaga pos akan memberikan gem dan kunci berisikan clue menuju ke pos selanjutnya. Tekan tombol "Next" untuk melihat clue menuju pos selanjutnya.</p>
+            <button id="obelix-totem-end" onclick="window.location.href='everything-is-awesome.html'">Next</button>
         </div>
         <p id="obelix-totem-mission-wrong-answer" style="display: none;">Kunci salah, coba lagi.</p>
     </div>
@@ -52,11 +54,11 @@
                 .then(data => {
                     const answers = data.split('\n').map(a => a.trim().toUpperCase());
                     if (answers.includes(userAnswer)) {
-                        document.getElementById('mapContainerObelixTotem').style.display = 'block';
+                        document.getElementById('mapContainerObelixTotem').style.display = 'flex';
                         document.getElementById('obelix-totem-wrong-answer').style.display = 'none';
                     } else {
                         document.getElementById('mapContainerObelixTotem').style.display = 'none';
-                        document.getElementById('obelix-totem-wrong-answer').style.display = 'block';
+                        document.getElementById('obelix-totem-wrong-answer').style.display = 'flex';
                     }
                 });
         });
@@ -76,6 +78,7 @@
                     const answers = data.split('\n').map(a => a.trim().toUpperCase());
                     if (answers.includes(userKey)) {
                         document.getElementById('obelix-totem-mission-correct-answer').style.display = 'flex';
+                        document.getElementById('submit-key-button').style.background = 'grey';
                         document.getElementById('obelix-totem-mission-wrong-answer').style.display = 'none';
                     } else {
                         document.getElementById('obelix-totem-mission-correct-answer').style.display = 'none';

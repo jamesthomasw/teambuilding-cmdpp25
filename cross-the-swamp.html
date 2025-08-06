@@ -9,60 +9,28 @@
 <body>
     <div id="cross-the-swamp-instructions" class="cross-the-swamp">
         <h1>Tujuan anda selanjutnya</h1>
-        <p>Petunjuk: <br>(Seluruh Pos berada di DALAM AREA UNIPLAZA & TENGAH)</p>
-        <p>Bagi sebagian orang, jalur ini merupakan jalur mereka untuk<span style="font-weight: bold;"> pulang</span> dan jalur mereka untuk <span style="font-weight: bold;">berangkat kerja setiap hari.</span> Sekarang di dekat jalur itu, ada tantangan yang menanti.</p>
-        <p>Tiga Kata:</p>
-        <p>R _ _    K _ _ _ _ _     A _ _</p>
-        <form id="answerForm-cross-the-swamp-instructions">
-            <input type="text" id="answerInput-cross-the-swamp-instructions" placeholder="Masukkan jawaban anda di sini" required>
-            <br>
-            <button type="submit">Kirim Jawaban</button>
-        </form>
-        <div id="mapContainerCrossTheSwamp" style="display: none;">
-            <p>Jawaban Benar!</p>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d497.7507753961587!2d98.68231889830192!3d3.5860499354808835!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x303131b61b8d5887%3A0x1c2a4a4e4b0d64b8!2sUniland!5e0!3m2!1sen!2sid!4v1754444568418!5m2!1sen!2sid" width="350" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            <button id="cross-the-swamp-start">Saya Sudah Sampai</button>
-        </div>
-        <div id="cross-the-swamp-wrong-answer" style="display: none;">
-            <p>Jawaban salah, coba lagi.</p>
-        </div>
+        <h2>Petunjuk: <br>(Seluruh Pos berada di DALAM AREA UNIPLAZA & TENGAH)</h2>
+        <img src="Parkiran Samping.jpg" style="max-width: 80%;">
+        <button id="cross-the-swamp-start">Saya Sudah Sampai</button>
     </div>
     <div id="cross-the-swamp-mission" class="cross-the-swamp" style="display: none;">
         <h1>Cross The Swamp</h1>
-        <p>Tim anda ditantang untuk menyeberangi rawa beracun dengan hanya menggunakan 3 batu bata. Semua anggota tim anda harus berhasil menyeberang tanpa ada bagian tubuh mereka yang menyentuh rawa beracun.</p>
-        <p>Jika ada bagian tubuh anggota tim anda yang menyentuh rawa beracun, anggota tim tersebut harus kembali ke titik awal.</p>
-        <p>Apabila semua anggota tim anda berhasil menyeberangi rawa beracun dalam batas waktu 15 menit, tim anda akan mendapatkan gem dan kunci berisikan clue menuju ke pos selanjutnya</p>
+        <p>Temui penjaga pos Cross The Swamp.</p>
+        <p>Tim anda harus menyelesaikan tantangan yang diberikan dalam batas waktu yang telah ditentukan.</p>
+        <p>Penjaga pos akan memberikan gem dan kunci berisikan clue menuju ke pos selanjutnya bagi kelompok yang berhasil menyelesaikan tantangan.</p>
         <form id="answerForm-cross-the-swamp-mission">
             <input type="text" id="answerInput-cross-the-swamp-mission" placeholder="Masukkan kunci anda di sini" required>
             <br>
-            <button type="submit">Kirim Kunci</button>
+            <button id="submit-key-button" type="submit">Kirim Kunci</button>
         </form>
         <div id="cross-the-swamp-mission-correct-answer" style="display: none;">
             <p>Kunci benar! <br> Anda telah menyelesaikan misi di Pos 2 (GREEN) - CROSS THE SWAMP.</p>
-            <p>Penjaga pos akan memberikan gem dan kunci berisikan clue menuju ke pos selanjutnya. Masukkan kunci dan tekan tombol "Next" untuk melihat clue menuju pos selanjutnya.</p>
+            <p>Penjaga pos akan memberikan gem dan kunci berisikan clue menuju ke pos selanjutnya.Tekan tombol "Next" untuk melihat clue menuju pos selanjutnya.</p>
             <button id="cross-the-swamp-end" onclick="window.location.href='obelix-totem.html'">Next</button>
         </div>
         <p id="cross-the-swamp-mission-wrong-answer" style="display: none;">Kunci salah, coba lagi.</p>
     </div>
     <script>
-        document.getElementById('answerForm-cross-the-swamp-instructions').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const userAnswer = document.getElementById('answerInput-cross-the-swamp-instructions').value.trim().toUpperCase();
-
-            fetch('cross-the-swamp-answer.txt')
-                .then(response => response.text())
-                .then(data => {
-                    const answers = data.split('\n').map(a => a.trim().toUpperCase());
-                    if (answers.includes(userAnswer)) {
-                        document.getElementById('mapContainerCrossTheSwamp').style.display = 'block';
-                        document.getElementById('cross-the-swamp-wrong-answer').style.display = 'none';
-                    } else {
-                        document.getElementById('mapContainerCrossTheSwamp').style.display = 'none';
-                        document.getElementById('cross-the-swamp-wrong-answer').style.display = 'block';
-                    }
-                });
-        });
-
         document.getElementById('cross-the-swamp-start').addEventListener('click', function() {
             document.getElementById('cross-the-swamp-instructions').style.display = 'none';
             document.getElementById('cross-the-swamp-mission').style.display = 'flex';
@@ -78,6 +46,7 @@
                     const answers = data.split('\n').map(a => a.trim().toUpperCase());
                     if (answers.includes(userAnswer)) {
                         document.getElementById('cross-the-swamp-mission-correct-answer').style.display = 'flex';
+                        document.getElementById('submit-key-button').style.background = 'grey';
                         document.getElementById('cross-the-swamp-mission-wrong-answer').style.display = 'none';
                     } else {
                         document.getElementById('cross-the-swamp-mission-correct-answer').style.display = 'none';
